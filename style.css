@@ -1,0 +1,182 @@
+/* border  */
+#top, #bottom, #left, #right {
+	background:lightblue;
+	position: fixed;
+	}
+#left, #right {
+    top: 0; bottom: 0;
+    width: 15px;
+    }
+#left { left: 0; }
+#right { right: 0; }
+#top, #bottom {
+    left: 0; right: 0;
+    height: 15px;
+    }
+#top { top: 0; }
+#bottom { bottom: 0; }
+
+body {
+    background-color: darkblue;
+ }
+
+ /* main grid */
+.main-box {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    grid-template-rows: 2fr auto 1fr;
+    grid-template-areas: 
+        '. header .'
+        '. main .'
+        '. footer .';
+}
+.header {
+    grid-area: header;
+    justify-self: left;
+    align-self: end;
+    padding-bottom: 10px;
+    color:white;
+    font-size: 30px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: normal;
+    display: inline-block;
+}
+.top_weather {
+    height: 65px;
+    width: 65px;
+    padding-left: 5px;
+}
+.header > span, .header > img{
+    vertical-align: middle;
+}
+.footer{
+    grid-area: footer;
+    justify-self: left;
+    align-self: start;
+    color:white;
+    font-size: 20px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: normal;
+}
+
+/* cities grid */
+.container{
+    grid-area: main;
+    background: white;
+    display: grid;
+    grid-template-columns: 200px 200px 200px 200px;
+    grid-template-rows: 100px 100px 100px 100px; 
+    grid-template-areas:
+            'lisbon lisbon paris belgrade'
+            'moscow telaviv cair newyork'
+            'newdelphi sanfrancisco sanfrancisco tokyo'
+            'sydney sydney sydney sydney';
+    grid-gap: 10px;
+    align-content: center;
+    justify-content: center;
+    align-self: center;
+    justify-self: center;
+    padding: 10px;
+}
+.lisbon {
+    grid-area: lisbon;
+    background-color: blueviolet;
+}
+.paris {
+    grid-area: paris;
+    background-color: yellowgreen;
+}
+.belgrade {
+    grid-area: belgrade;
+    background-color: darkred;
+}
+.moscow {
+    grid-area: moscow;
+    background-color: orange;
+}
+.telaviv {
+    grid-area: telaviv;
+    background-color: olivedrab;
+}
+.cair {
+    grid-area: cair;
+    background-color: cornflowerblue;
+}
+.newyork {
+    grid-area: newyork;
+    background-color: lightpink;
+}
+
+.newdelphi {
+    grid-area: newdelphi;
+    background-color:lightgreen;
+}
+.sanfrancisco {
+    grid-area: sanfrancisco;
+    background-color:yellow;
+}
+.tokyo {
+    grid-area: tokyo;
+    background-color:rebeccapurple;
+}
+.sydney {
+    grid-area: sydney;
+    background-color:lightcoral;
+}
+.container > div {
+    text-align: center;
+    padding: 15px 0;
+    font-size: 25px;
+    font-family: "Times New Roman", Times, serif;
+    font-style: italic;
+    font-weight: bold;
+    color:white;
+    display: inline-block;
+}
+
+.city{
+    vertical-align: middle;
+}
+.weather-info{
+    padding-top: 8px;
+}
+.celsius::after{
+    content: "\00a0\2103"; 
+    vertical-align: middle;
+    /*\00a0  is a hex number for &nbsp; */
+    /*\2103  is a hex number for Celsius symbol*/
+}
+.icon::after {
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    font-size: 35px;
+    font-family: "Font Awesome 5 Free";
+    vertical-align: middle;
+  }
+ .sun::after{
+    font-weight: 900;
+    content: "\00a0\f185";
+}
+.sunny::after{
+    font-weight: 900;
+    content: "\00a0\f6c4";
+}
+.rain::after{
+    font-weight: 900;
+    content: "\00a0\f740";
+}
+.cloud::after{
+    font-weight: 900;
+    content: "\00a0\f0c2";
+}
+.wind::after{
+    font-weight: 900;
+    content: "\00a0\f72e";
+}
+.moon::after{
+    font-weight: 900;
+    content: "\00a0\f186";
+}
